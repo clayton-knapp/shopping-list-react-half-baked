@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getUser } from './services/fetch-utils';
+// import { getUser } from './services/fetch-utils';
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,6 +21,7 @@ export default function App() {
   //DO I NEED THIS?? - IS IT REDUNDANT?
   useEffect(() => {
     const user = localStorage.getItem('supabase.auth.token');
+    // const user = getUser();
     setUser(user);
   }, []);
 
