@@ -14,7 +14,7 @@ export default function ListItemForm({ fetchAndSetItems }) {
       name: name,
       quantity: quantity,
     };
-    const response = await createListItem(item);
+    await createListItem(item);
 
     // refetch the items using the handler function passed down as a prop
     fetchAndSetItems();
