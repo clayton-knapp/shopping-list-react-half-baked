@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import { getUser } from './services/fetch-utils';
+import { getUser } from './services/fetch-utils';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,11 +17,9 @@ export default function App() {
   const [user, setUser] = useState(localStorage.getItem('supabase.auth.token'));
 
   // add a useEffect to get the user and inject the user object into state on load
-
-  //DO I NEED THIS?? - IS IT REDUNDANT?
   useEffect(() => {
-    const user = localStorage.getItem('supabase.auth.token');
-    // const user = getUser();
+    // const user = localStorage.getItem('supabase.auth.token');
+    const user = getUser();
     setUser(user);
   }, []);
 
